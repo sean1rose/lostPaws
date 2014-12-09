@@ -92,6 +92,17 @@ angular.module('lostPawsApp')
         templateUrl: 'views/main.html'
       })
 
+      .state('main.list', {
+        url: 'list',
+        templateUrl: 'views/main-list.html',
+        controller: 'MainListCtrl'
+      })
+
+      .state('main.paragraph', {
+        url: 'paragraph',
+        template: "I'm looking for my dog"
+      })
+
       .state('chat', {
         url: '/chat',
         templateUrl: 'views/chat.html'
