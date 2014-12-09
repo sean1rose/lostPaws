@@ -18,5 +18,5 @@ angular.module('lostPawsApp', [
     'firebase',
     'firebase.utils',
     'simpleLogin',
-    'ui-router'
+    'ui.router'
   ]);

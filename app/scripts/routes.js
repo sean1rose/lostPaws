@@ -55,36 +55,58 @@ angular.module('lostPawsApp')
 
   // configure views; the authRequired parameter is used for specifying pages
   // which should only be available while logged in
-  .config(['$routeProvider', function($routeProvider) {
-    // Defining Routes using $routeProvider
-    $routeProvider
-      // route for home page
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      // route for login page
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
+  // .config(['$routeProvider', function($routeProvider) {
+  //   // Defining Routes using $routeProvider
+  //   $routeProvider
+  //     // route for home page
+  //     .when('/', {
+  //       templateUrl: 'views/main.html',
+  //       controller: 'MainCtrl'
+  //     })
+  //     // route for login page
+  //     .when('/login', {
+  //       templateUrl: 'views/login.html',
+  //       controller: 'LoginCtrl'
+  //     })
+
+  //     .when('/chat', {
+  //       templateUrl: 'views/chat.html',
+  //       controller: 'ChatCtrl'
+  //     })
+
+  //     .whenAuthenticated('/account', {
+  //       templateUrl: 'views/account.html',
+  //       controller: 'AccountCtrl'
+  //     })
+
+  //     .otherwise({redirectTo: '/'});
+  // }])
+
+  .config(function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+
+      .state('main', {
+        url: '/',
+        templateUrl: 'views/main.html'
       })
 
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
+      .state('chat', {
+        url: '/chat',
+        templateUrl: 'views/chat.html'
       })
 
-      .whenAuthenticated('/account', {
-        templateUrl: 'views/account.html',
-        controller: 'AccountCtrl'
+      .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html'
       })
 
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
+      .state('account', {
+        url: '/account',
+        templateUrl: 'views/account.html'
       })
-      .otherwise({redirectTo: '/'});
-  }])
+  })
 
   /**
    * Apply some route security. Any route's resolve method can reject the promise with
