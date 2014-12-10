@@ -9,6 +9,7 @@
  */
 angular.module('lostPawsApp')
   .controller('MainListCtrl', function ($scope) {
+
     $scope.dogs = [
       'Lassie',
       'Beethoven',
@@ -16,3 +17,4 @@ angular.module('lostPawsApp')
       'Bonus'
     ];
   });
+  

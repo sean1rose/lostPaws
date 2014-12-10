@@ -77,3 +77,15 @@ body {
     border-bottom: 0;
   }
 }
+
+/*.angular-google-map-container { height: 400px; }*/
+
+/*google-map {
+  display: block;
+  height: 600px;
+}
+*/
+
+.map-canvas {
+  height: 600px;
+}
